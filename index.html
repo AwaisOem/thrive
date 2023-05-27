@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <title>Thrive Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+           
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color: #FBCAFF;
+        }
+
+        .navbar {
+            background: transparent;
+            background-color: transparent;
+            display: flex;
+            position: absolute;
+            width: 100vw;
+            flex-direction: row;
+            flex-flow: wrap;
+        }
+
+        /* 8479E1 */
+        /* FBCAFF */
+        .nav1 {
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 2rem;
+            font-size: 2rem;
+            text-shadow: black;
+        }
+
+        .nav2 {
+            padding: 0 1rem;
+            display: flex;
+            margin-left: auto;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+        }
+
+        .searchicn {
+            margin-right: 10px;
+            padding: 2rem;
+            cursor: pointer;
+        }
+        .searchicn:hover
+        {
+            background-color: #8479E1;
+            opacity: 80%;
+            box-shadow: 1px 1px 20px -2px rgba(0, 0, 0, 0.201);
+        }
+        #hamburger {
+            cursor: pointer;
+            margin: 1rem 0;
+            padding: 1rem 2rem;
+        }
+        #close{
+            cursor: pointer;
+            margin: 1rem 0;
+            padding: 1rem 2rem;            
+        }
+        .hide
+        {
+            display: none !important;
+        }
+        .container {
+            background-color: #FBCAFF;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .sec1 {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sec2 {
+            height: 100%;
+            width: 50%;
+        }
+
+        .sec2-sec1 {
+            margin-top: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .sec2-sec1 :first-child {
+            padding: 30px;
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-right: 30px;
+            font-size: 6rem;
+        }
+        .ulta {
+            transform: rotate(270deg);
+            font-size: 2rem;
+            color: #8479E1;
+        }
+        .ulta:hover
+        {
+            transition: all 1s  ease-in-out;
+            transform: rotate(360deg);
+        }
+        .cbd {
+            margin-top: -20px;
+            font-size: 6rem;
+            padding: 0 30px;
+        }
+
+        .sec2 p {
+            padding: 0 40px;
+    
+            width: 70%;
+        }
+
+        #primary {
+            padding: 15px 35px;
+            border-radius: 12px;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+            background-color: #8479E1;
+            border: transparent;
+            color: white;
+            cursor: pointer;
+        }
+
+        #primary:hover {
+            background-color: #7768fd;
+        }
+
+        .buttons {
+            margin-top: 50px;
+            margin-left: 4%;
+        }
+
+        #secondary {
+            cursor: pointer;
+            background-color: rgb(236, 228, 228);
+            color: #8479E1;
+            padding: 15px 35px;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+            border: transparent;
+            border-radius: 12px;
+        }
+
+        #secondary:hover {
+            background-color: white;
+        }
+
+        #img {
+            padding: 20% 0 0 20%;
+            width: 60%;
+            height: 80%;
+        }
+
+        .piccon {
+            width: 40%;
+            height: 70%;
+            box-shadow: 2px 13px 38px 6px #8479E1;
+            border: 10px solid transparent;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            background-color: #8479E1;
+        }
+        .piccon:hover
+        {
+            transition: all 0.8s linear;
+            transform: rotateY(360deg);
+        }
+        @media screen and (max-width: 1296px) {
+            .container {
+                height: 100% !important;
+                width: 100vw !important;
+            }
+
+            .sec1 {
+                width: 100% !important;
+            }
+            
+            .sec2 {
+                width: 100% !important;
+            }
+
+            .piccon {
+                margin: 100px 0 !important;
+            }
+
+            .sec2 p {
+                margin: 0 !important;
+                width: 90% !important;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .searchicn {
+                display: none !important;
+            }
+        #dropdown
+        {
+            width: 100vw !important;
+            height: 60vh !important;
+            left: 0 !important;
+        }
+            .sec2-sec1 :first-child {
+                font-size: 4rem;
+            }
+
+            .ulta {
+                font-size: 1rem;
+            }
+
+            .cbd {
+                font-size: 4rem;
+            }
+        }
+
+        #dropdown
+        {
+            position: absolute;
+            transition: all 0.4s linear;
+            background-color: #8479E1;
+            border-radius:20px;
+            width: 30vw;
+            height: 40vh;
+            left: 67%;
+            top: 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #search
+        {
+                border:  transparent;
+                border-radius:40px;
+                background-color:rgba(0, 0, 0, 0.32);
+                width: 80% ;
+                padding-left: 30px;
+                height: 50px ;
+                margin-bottom: 20px;
+        }
+        .i{ 
+            text-decoration: none;
+            text-align: center;
+            color: #FBCAFF;
+            font-weight: 800;
+            width: 100%;
+            padding:10px 0;
+            height: 10%;
+            }
+        .i:hover
+        {
+            color: #5348b7;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav1" href="#">Thrive</div>
+        <div class="nav2">
+            <div class="searchicn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    style="fill: rgba(0, 0, 0, 1);">
+                    <path
+                        d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z">
+                    </path>
+                </svg></div>
+            <a href="http://awaisoem.netlify.app/" target="_blank">
+                <div class="searchicn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        style="fill: rgba(0, 0, 0, 1);">
+                        <path
+                            d="M9.5 12c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm1.5 1H8c-3.309 0-6 2.691-6 6v1h15v-1c0-3.309-2.691-6-6-6z">
+                        </path>
+                        <path
+                            d="M16.604 11.048a5.67 5.67 0 0 0 .751-3.44c-.179-1.784-1.175-3.361-2.803-4.44l-1.105 1.666c1.119.742 1.8 1.799 1.918 2.974a3.693 3.693 0 0 1-1.072 2.986l-1.192 1.192 1.618.475C18.951 13.701 19 17.957 19 18h2c0-1.789-.956-5.285-4.396-6.952z">
+                        </path>
+                    </svg></div>
+            </a>
+            <a id="hamburger" class="" onclick="f1(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+                </svg>
+            </a>
+            <div id="close" class="hide" onclick="f2(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: #8479E1;"><path d="M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm.706 13.293-1.414 1.414L12 13.415l-3.292 3.292-1.414-1.414 3.292-3.292-3.292-3.292 1.414-1.414L12 10.587l3.292-3.292 1.414 1.414-3.292 3.292 3.292 3.292z"></path></svg>
+            </div>
+        </div>
+    </nav>
+    <div id="dropdown" class="hide">
+        <input type="search" name="" id="search" placeholder="↪ Search products" autocomplete="off">
+        <a href="https://awaisoem.github.io/SPARK-OFFICIALS/" target="_blank" class="i">More services</a>
+        <a href="https://awaisoem.github.io/SPARK-OFFICIALS/" target="_blank" class="i">Conatact Us</a>
+        <a href="http://awaisoem.netlify.app/" target="_blank" class="i">About Developer</a>
+        <a href="http://awaisoem.netlify.app/blogs" target="_blank" class="i">Blogs</a>
+    </div>
+    <div class="container">
+        <div class="sec1">
+            <div class="piccon">
+                <img src="./oil.png" id="img" alt="Error in image loading">
+            </div>
+        </div>
+        <div class="sec2">
+            <div class="sec2-sec1">
+                <h1>THRIVE</h1>
+                <h1 class="ulta">$4.97</h1>
+            </div>
+            <h1 class="cbd">CBD OIL</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Odit maxime qui unde recusandae quasi quod! Facere voluptas tenetur, nisi recusandae, dicta voluptate
+                quis esse quos pariatur corporis porro veniam alias quaerat harum doloremque voluptatum dolores illum
+                quidem eum, nulla vel!</p>
+            <div class="buttons">
+                <a href="#"><button id="primary">ADD TO CART</button></a>
+                <a href="#"><button id="secondary">VIEW DETAILS</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function f1(x){
+            document.getElementById('hamburger').className = "hide";
+            document.getElementById('close').className = "";
+            document.getElementById('dropdown').className = "";
+        }
+        function f2(x){
+            document.getElementById('hamburger').className = "";
+            document.getElementById('close').className = "hide";
+            document.getElementById('dropdown').className = "hide";
+        }
+    </script>
+</body>
+
+</html>
